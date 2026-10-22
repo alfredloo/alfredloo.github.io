@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+   <channel>
+      <title>Alfred&apos;s Ramblings</title>
+      <link>http://www.alfredivy.per.sg/blog/</link>
+      <description>Blog about life, family, work, IT and of course Palm</description>
+      <language>en</language>
+      <copyright>Copyright 2011</copyright>
+      <lastBuildDate>Mon, 26 Jan 2009 22:33:15 +0800</lastBuildDate>
+      <generator>http://www.sixapart.com/movabletype/</generator>
+      <docs>http://blogs.law.harvard.edu/tech/rss</docs> 
+
+            <item>
+         <title>Guns animation</title>
+         <description>I have always been fascinated by guns, how they pack so much mechanical automation in a such a small package.</description>
+         <link>http://www.alfredivy.per.sg/blog/2009/01/guns_animation.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2009/01/guns_animation.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Others</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">guns</category>
+        
+         <pubDate>Mon, 26 Jan 2009 22:33:15 +0800</pubDate>
+      </item>
+            <item>
+         <title>Palm Pre</title>
+         <description><![CDATA[Palm is back, introducing a totally new device called Pre, this time whith a phone similar to a Treo, but way better.
+
+But it is going take a lot more  than a product announcement to tempt me back.  I migrated to a P1.  To get new and old users using their product, Palm has to show that it can deliver and do it continuously.
+
+Now if that thing comes with a 5MP camera.
+
+Read about it <a href="http://www.reghardware.co.uk/2009/01/08/palm_launches_pre/">here.</a>]]></description>
+         <link>http://www.alfredivy.per.sg/blog/2009/01/palm_pre.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2009/01/palm_pre.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">PDA Palm</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">Palm</category>
+        
+         <pubDate>Sun, 11 Jan 2009 16:08:04 +0800</pubDate>
+      </item>
+            <item>
+         <title>Target account name is incorrect.</title>
+         <description>A customer encountered this error message, when he tried to join computer to domain or change the DNS from Primary to AD integrated.  Oh did I mention that the 2 out of 3 domain controllers in the domain are offline?</description>
+         <link>http://www.alfredivy.per.sg/blog/2009/01/target_account_name_is_incorre.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2009/01/target_account_name_is_incorre.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Windows</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">Active Directory</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">DNS</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">replication</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">Windows</category>
+        
+         <pubDate>Sat, 10 Jan 2009 23:13:29 +0800</pubDate>
+      </item>
+            <item>
+         <title>Guests cannot connect to VMware server host.</title>
+         <description>This sounds a bit weird.  If you have VMware server running on Windows 2003 SP2, you might encounter connection problems from the guest.  I have tested using Window shares or UNC paths.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/12/guests_cannot_connect_to_vmwar.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/12/guests_cannot_connect_to_vmwar.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">VMware</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">VMware</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">Windows</category>
+        
+         <pubDate>Wed, 24 Dec 2008 18:20:40 +0800</pubDate>
+      </item>
+            <item>
+         <title>Joining a Linux server to Active Directory domain</title>
+         <description>A file server running on Linux with Samba is an attactive option to reduce license cost.  Samba is configure is easy enough.  To get the user permissions right, you will need to join the Linux sever to the Active Directory domain.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/12/joining_a_linux_server_to_acti.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/12/joining_a_linux_server_to_acti.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Linux and Unix</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">Linux</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">Windows</category>
+        
+         <pubDate>Tue, 23 Dec 2008 02:13:19 +0800</pubDate>
+      </item>
+            <item>
+         <title>Death in the Family</title>
+         <description>This is more of a follow up from the previous post.  This post is done retroactively, eg I change the posting date to time of death.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/12/death_in_the_family_1.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/12/death_in_the_family_1.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Family</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">family</category>
+        
+         <pubDate>Fri, 12 Dec 2008 12:10:48 +0800</pubDate>
+      </item>
+            <item>
+         <title>Remote Access Authentication</title>
+         <description>Your users wants to have VPN access to access stuff on the road.  The VPN tunnel stops at the appliance.  You loathe create an access control list just for that box.  Not to mention internal audit is going to you hell for static passwords.  The solution is RADIUS</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/12/remote_access_authentication.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/12/remote_access_authentication.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">IT</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">IT</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">Windows</category>
+        
+         <pubDate>Mon, 01 Dec 2008 23:10:27 +0800</pubDate>
+      </item>
+            <item>
+         <title>Forklift upgrade</title>
+         <description>What happens if you need to upgrade the creaking old server hardware that Exchange is sitting on?  Especially if you want to keep the same name to prevent users from going bonkers and yourself from updating all the docs.  Read on.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/11/forklift_upgrade.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/11/forklift_upgrade.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Exchange</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">Exchange</category>
+        
+         <pubDate>Mon, 24 Nov 2008 22:45:59 +0800</pubDate>
+      </item>
+            <item>
+         <title>VMware Converter 3.0</title>
+         <description>A customer have a bunch of really old Compaq servers running, you guess it a mission critical application that nobody knows how to reinstall.  So I convinced them to virtualize the machines as a business continuity plan.  That way hardware failure will not affect applications.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/11/vmware_converter_30.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/11/vmware_converter_30.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">VMware</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">VMware</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">Windows</category>
+        
+         <pubDate>Mon, 03 Nov 2008 00:27:56 +0800</pubDate>
+      </item>
+            <item>
+         <title>Tools for converting machines to VMware</title>
+         <description>VMware converter CD and the following:
+
+1.	Linux Live CD, eg Ubuntu, not UBCD.
+2.	Hiren CD, for TestDisk to read partition information.
+3.	Boot.ini configuration
+4.	Installed SCSI adapter type.
+</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/11/tools_for_converting_machines.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/11/tools_for_converting_machines.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">VMware</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">VMware</category>
+        
+         <pubDate>Sun, 02 Nov 2008 12:01:16 +0800</pubDate>
+      </item>
+            <item>
+         <title>What happens when your VMs refuse to start.</title>
+         <description>On powering up the virtual servers, they keep hanging.   Strangely they use to be working  just a few minutes ago?</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/10/what_happens_when_your_vms_ref.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/10/what_happens_when_your_vms_ref.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">VMware</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">VMware</category>
+        
+         <pubDate>Mon, 13 Oct 2008 22:44:55 +0800</pubDate>
+      </item>
+            <item>
+         <title>Installing Windows 2008 using HP SmartStart 8.1</title>
+         <description>Installing servers with vendor installation CD is to make your life easier as it comes with all the necessary drivers for their hardware.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/10/installing_windows_2008_using.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/10/installing_windows_2008_using.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">IT</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">hp</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">smartstart</category>
+                  <category domain="http://www.sixapart.com/ns/types#tag">windows 2008</category>
+        
+         <pubDate>Sun, 12 Oct 2008 22:38:56 +0800</pubDate>
+      </item>
+            <item>
+         <title>Playing with Netbackup II</title>
+         <description>Some important Netbackup terminology that you should know but are buried deep in the PDF docs.  You need to settle on the method of backup before committing to buy the licenses.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/09/playing_with_netbackup_ii.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/09/playing_with_netbackup_ii.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Data Backup</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">Symantec</category>
+        
+         <pubDate>Sun, 28 Sep 2008 10:16:29 +0800</pubDate>
+      </item>
+            <item>
+         <title>Playing with Netbackup I</title>
+         <description>I was passed a job to get Netbackup 6.5 to do a SAN based backup. There are three ways to perform a backup of server/s data from a dedicated server, LAN, backup LAN and lastly SAN.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/09/playing_with_netbackup.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/09/playing_with_netbackup.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">Data Backup</category>
+        
+                  <category domain="http://www.sixapart.com/ns/types#tag">Symantec</category>
+        
+         <pubDate>Fri, 26 Sep 2008 09:44:26 +0800</pubDate>
+      </item>
+            <item>
+         <title>How to bypass security for your UIQ3</title>
+         <description>How to install unsigned applications for your UIQ3 device.  I have tried this successfully on my P1i
+
+Briefly, you need to unlock the protected folders to install two applications and a driver. One to unlock security, the other to take unsigned applications.</description>
+         <link>http://www.alfredivy.per.sg/blog/2008/09/how_to_bypass_security_for_you.html</link>
+         <guid>http://www.alfredivy.per.sg/blog/2008/09/how_to_bypass_security_for_you.html</guid>
+                  <category domain="http://www.sixapart.com/ns/types#category">PDA Palm</category>
+        
+        
+         <pubDate>Wed, 17 Sep 2008 18:21:35 +0800</pubDate>
+      </item>
+      
+   </channel>
+</rss>
