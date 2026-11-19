@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Remote Access Authentication (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/11/forklift_upgrade.html" title="Forklift upgrade" />
+   <link rel="next" href="../../2008/12/death_in_the_family_1.html" title="Death in the Family" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/12/remote_access_authentication.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/122.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Remote Access Authentication"
+    dc:identifier="../../2008/12/remote_access_authentication.html"
+    dc:subject="IT"
+    dc:description="Configuring Windows 2008 for Radius"
+    dc:creator="Alfred Loo"
+    dc:date="2008-12-01T23:10:27+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/11/forklift_upgrade.html">&laquo; Forklift upgrade</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/12/death_in_the_family_1.html">Death in the Family &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Remote Access Authentication</h2>
+                     <div class="entry" id="entry-691">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Your users wants to have VPN access to access stuff on the road.  The VPN tunnel stops at the appliance.  You loathe create an access control list just for that box.  Not to mention internal audit is going to you hell for static passwords.  The solution is RADIUS</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>RADIUS or Remote Authentication Dial In User Service is used to connect banks of modems to a central authentication servers.  Nowadays it is used to connect VPN gateways and firewalls to a central authentication service like Active Directory.</p>
+
+<p>Radius Servers that connects to authentication service are available in Microsoft Windows.  In NT, 2000 and 2003 it is called the Internet Authentication Service.  In Windows 2008, it is part of the Network Policy Server.</p>
+
+<p>This post is mean as a guide to create a Radius solution using Windows 2008.</p>
+
+<p>1. Enable your VPN box to use Radius as authentication.  This varies from vendor to vendor.  Please see vendor documentation.<br />
+2. On the Windows 2008 server, add the role of Network Policy and Access Service.  Check Network Policy Server.<br />
+3. Under Administrative Tools, launch the Network Policy Server MMC.<br />
+4. Create a Radius client in the server.  This is for the communication with the VPN box or firewall.<br />
+5. Create a new Connection Policy.  Add a time condition for the access.<br />
+6. Create a new Network Policy.  Leave type as unknown.  Add a condition pointing to desired Windows group, eg VPN users.<br />
+7. Add your users to the Windows group. <br />
+8. Test and check for errors in the log files. Using <a href="http://technet.microsoft.com/en-us/library/cc785145.aspx"> this </a>to guide you.</p>
+
+<p>If you did not create a Connection Policy, the authentication will pass, (4142 0) and it will be rejected (4142 49), "Did not match connection request policy".<br />
+</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Windows&amp;blog_id=1" rel="tag">Windows</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on December  1, 2008 11:10 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/12/remote_access_authentication.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>December  1, 2008 11:10 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/11/forklift_upgrade.html">Forklift upgrade</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/12/death_in_the_family_1.html">Death in the Family</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

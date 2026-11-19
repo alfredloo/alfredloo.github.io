@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Migrating Symantec Endpoint Security Management Server (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/08/web_enabled_management_for_lin.html" title="Web enabled management for Linux" />
+   <link rel="next" href="../../2008/08/another_project_completed.html" title="Another project completed" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/08/migrating_symantec_endpoint_se.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/107.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Migrating Symantec Endpoint Security Management Server"
+    dc:identifier="../../2008/08/migrating_symantec_endpoint_se.html"
+    dc:subject="IT"
+    dc:description="Moving Symantec Endpoint Protection Management Server."
+    dc:creator="Alfred Loo"
+    dc:date="2008-08-07T13:10:45+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/08/web_enabled_management_for_lin.html">&laquo; Web enabled management for Linux</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/08/another_project_completed.html">Another project completed &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Migrating Symantec Endpoint Security Management Server</h2>
+                     <div class="entry" id="entry-676">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Symantec Endpoint Protection is a marriage of Symantec Antivirus 11 and Sygate Firewall.  As a result the management server is quite a different animal from the previous version.  It is much more similar to Mcafee ePO.</p>
+
+<p>There are times you need to move the management server  after installation.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>The procedure from Symantec forums is as follows:</p>
+
+<p>Follow the steps below to move Symantec Endpoint Protection Manager from one server to another with a different IP address and Host name:</p>
+
+<blockquote>1. Install Symantec Endpoint Protection Manager on the new server
+2. In the Management Server Configuration Wizard panel, check Install an additional site, and then click Next
+3. In the Server Information panel, accept or change the default values for the following boxes, and then click Next
+4. Installing and configuring Symantec Endpoint Protection Manager for replication
+
+<p>Server Name<br />
+Server Port<br />
+Server Data Folder</p>
+
+<p>5. In the Site Information panel, accept or change the name in the Site Name box, and then click Next<br />
+6. In the Replication Information panel, type values in the following boxes:</p>
+
+<p>Replication Server Name<br />
+(The Name or IP address of the old Symantec Endpoint Protection Manager)<br />
+Replication Server Port<br />
+(The default is 8443)<br />
+Administrator Name<br />
+(The Username used to log on to the old console)<br />
+Password<br />
+(The password used to log on to the old console.)</p>
+
+<p>7. Click Next<br />
+8. In the Certificate Warning dialog box, click Yes<br />
+9. In the Database Server Choice panel, do one of the following, and then click Next</p>
+
+<p>Check Embedded database, and complete the installation.<br />
+Check Microsoft SQL Server, and complete the installation.</p>
+
+<p>Note: While configuring the new server we can choose any of SQL or Embedded as this process is irrespective of the previous database type.</p>
+
+<p>10. Log in to the new Symantec Endpoint Protection Manager (SEPM) and ensure that all the clients and policies are Migrated sucessfully<br />
+11. Click Policies<br />
+12. Click Policy Components<br />
+13. Click Management Server Lists<br />
+14. Click Add Management Server List<br />
+15. Click Add > Priority and a new Priority would get added named as Priority2<br />
+16. Add the Old server under Prority2 and add the new one under Prority1<br />
+17. After the sucessful Migration uninstall the old Symantec Endpoint Protection Manager (SEPM)</blockquote></p>
+
+<p>Please note there is an action missing from above.  You need to assign the Management Server List.  Right mouse click, Assign and select the desired container.</p>
+
+<p><a href="https://forums.symantec.com/syment/board/message?board.id=endpoint_protection11&thread.id=10507">Link</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Symantec&amp;blog_id=1" rel="tag">Symantec</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on August  7, 2008  1:10 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/08/migrating_symantec_endpoint_se.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>August  7, 2008  1:10 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/08/web_enabled_management_for_lin.html">Web enabled management for Linux</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/08/another_project_completed.html">Another project completed</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

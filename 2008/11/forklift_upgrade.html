@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Forklift upgrade (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/11/vmware_converter_30.html" title="VMware Converter 3.0" />
+   <link rel="next" href="../../2008/12/remote_access_authentication.html" title="Remote Access Authentication" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/11/forklift_upgrade.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/121.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Forklift upgrade"
+    dc:identifier="../../2008/11/forklift_upgrade.html"
+    dc:subject="Exchange"
+    dc:description="Exchange forklift upgrade using disasterrecovery switch."
+    dc:creator="Alfred Loo"
+    dc:date="2008-11-24T22:45:59+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/11/vmware_converter_30.html">&laquo; VMware Converter 3.0</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/12/remote_access_authentication.html">Remote Access Authentication &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Forklift upgrade</h2>
+                     <div class="entry" id="entry-690">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>What happens if you need to upgrade the creaking old server hardware that Exchange is sitting on?  Especially if you want to keep the same name to prevent users from going bonkers and yourself from updating all the docs.  Read on.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>You can do a forklift upgrade.  This is a big bang approach.  The main idea is to use the DisasterRecovery switch in setup.  This will reinstall Exchange and take all the settings from Active Directory.  Quite neat trick actually, when you compared it Exchange 5.5 DR.</p>
+
+<p>Basically you do this:<br />
+1. Prep a new server to be exactly like the current server.  Same number drives and letters for the location of the storage groups.  You can make the system partition bigger or even use a new version of Operating system with a caveat.<br />
+2. Shutdown the current Exchange.<br />
+3. Move the stores over to the new server.<br />
+4. Reset the computer account of the current Exchange server.<br />
+5. Rename the new server, as the current server and join domain.<br />
+6. Reinstall Exchange using the /DisasterRecovery switch.  Note you may have to do this from the Start , Run location or through control panel.<br />
+7. Install service pack/s using the /DisasterRecovery switch.  This will prevent the stores from being mounted.<br />
+8. Mount the stores and uncheck "Do not mount stores at startup".</p>
+
+<p>Microsoft <a href="http://technet.microsoft.com/en-us/library/aa997176(EXCHG.65).aspx">supports forklift upgrade</a> reusing back the same version of operating system.</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Exchange&amp;blog_id=1" rel="tag">Exchange</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on November 24, 2008 10:45 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/11/forklift_upgrade.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>November 24, 2008 10:45 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/11/vmware_converter_30.html">VMware Converter 3.0</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/12/remote_access_authentication.html">Remote Access Authentication</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

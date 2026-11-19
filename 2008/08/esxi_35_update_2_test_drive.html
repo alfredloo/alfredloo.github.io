@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>ESXi 3.5 update 2 test drive (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/08/taking_a_long_time_view_verita.html" title="Taking a long time view Veritas job history" />
+   <link rel="next" href="../../2008/09/installing_an_additional_node.html" title="Installing an additional node to a SQL 2005 cluster" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/08/esxi_35_update_2_test_drive.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/112.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="ESXi 3.5 update 2 test drive"
+    dc:identifier="../../2008/08/esxi_35_update_2_test_drive.html"
+    dc:subject="VMware"
+    dc:description="Test drive ESXi 3.5, but it needs HP G5 servers"
+    dc:creator="Alfred Loo"
+    dc:date="2008-08-27T18:37:34+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/08/taking_a_long_time_view_verita.html">&laquo; Taking a long time view Veritas job history</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/09/installing_an_additional_node.html">Installing an additional node to a SQL 2005 cluster &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">ESXi 3.5 update 2 test drive</h2>
+                     <div class="entry" id="entry-681">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>I was looking through the VMware website and stumbled on the free version of ESX (since 28 Jul 08).  So I thought I do a test drive together with some of the very old VM Server images.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>Put in a request to the data center and they gave me a Compaq DL 360 G1 server.  After rustling up the usual KVM stuff, pop in the CD and it gave me an error.  Why?  It seems that the free version of ESX, ESXi supports mostly HP's G5 servers.  Presumably to cut down on the size and workload.  Sigh.  Back to the data center folks.  </p>
+
+<p>Unfortunately they don't have a G5 server to spare, so no test drive for now.</p>
+
+<p>Looking through the specs of ESXi, it appears that the Linux service console is not available.  The service console is for installing agents for server monitoring or backup.  Without it you cannot use backup software or SSH to take copy of the guest OS files.  The only method available is to use the VMConverter.</p>
+
+<p>Personally I would sacrifice some performance for manageability and backup. Install VMware Server on top of Linux.  Centos  distribution recommended. This setup will give you the features of ESX and a bit more. </p>
+
+<p>You can have Samba running and together with a cron job, stop the guest OS to take a backup. Alternatively you can take a snapshot and backup the snapshot.</p>
+
+<p></p>
+
+<p><a href="http://www.vmware.com/products/esxi/uses.html">ESXi uses</a>,  <a href="http://www.vmware.com/products/converter/">VMConverter</a>, <a href="http://www.centos.org/">Centos</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Linux&amp;blog_id=1" rel="tag">Linux</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=VMware&amp;blog_id=1" rel="tag">VMware</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on August 27, 2008  6:37 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/08/esxi_35_update_2_test_drive.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>August 27, 2008  6:37 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/08/taking_a_long_time_view_verita.html">Taking a long time view Veritas job history</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/09/installing_an_additional_node.html">Installing an additional node to a SQL 2005 cluster</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

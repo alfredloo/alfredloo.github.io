@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Trend Micro OfficeScan and ServerProtect (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/03/promoting_domain_controllers.html" title="Promoting Domain Controllers" />
+   <link rel="next" href="../../2008/03/working_on_primary_dns_server.html" title="Working on Primary DNS server" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/03/trend_micro_officescan_and_ser.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/81.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Trend Micro OfficeScan and ServerProtect"
+    dc:identifier="../../2008/03/trend_micro_officescan_and_ser.html"
+    dc:subject="IT"
+    dc:description="Trend Micro OfficeScan and ServerProtect"
+    dc:creator="Alfred Loo"
+    dc:date="2008-03-19T10:49:05+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/03/promoting_domain_controllers.html">&laquo; Promoting Domain Controllers</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/03/working_on_primary_dns_server.html">Working on Primary DNS server &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Trend Micro OfficeScan and ServerProtect</h2>
+                     <div class="entry" id="entry-650">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>After a long lull, I get to work with Trend Micro products again.  OfficeScan has really evolved.  The current version 8.0 will work with IIS or Apache 2.0 (only).  If it detects an IIS web server, it will proceed to install for it.  Otherwise it will install Apache 2.0.  Note this is located in OfficeScan folder, not Apache Project.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>OfficeScan requires you to keep track of the management and client communication port.  With these 2 bits of information, transferring clients between servers of different version is a real snap.  Older clients on a OfficeScan 8.0 server will get automatically upgraded without prompts.  So be careful! </p>
+
+<p>ServerProtect for Windows, 5.58 is a tight product, unlike OfficeScan does not require a web server. It has its own management interface.  Moving clients is just a simple matter of doing a right mouse click and select the appropriate option.</p>
+
+<p>Installing ServerProtect on Windows 2003 servers, you may encounter services cannot start. This <a href="http://esupport.trendmicro.com/support/viewxml.do?ContentID=EN-127708&id=EN-127708">article</a> and <a href="http://esupport.trendmicro.com/support/viewxml.do?ContentID=EN-126869&id=EN-126869">this</a> can help.</p>
+
+<p>Upgrading the program can a breeze or nightmare.  It all depend on how you look at it.  Download the latest patch and install in the Information server.  After 30 seconds it will automatically deploy to all the Normal servers.  If you want to test the patch first, you want to install on a Normal server first. </p>
+
+<p><br />
+</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=OfficeScan&amp;blog_id=1" rel="tag">OfficeScan</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=ServerProtect&amp;blog_id=1" rel="tag">ServerProtect</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Trend%20Micro&amp;blog_id=1" rel="tag">Trend Micro</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on March 19, 2008 10:49 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/03/trend_micro_officescan_and_ser.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>March 19, 2008 10:49 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/03/promoting_domain_controllers.html">Promoting Domain Controllers</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/03/working_on_primary_dns_server.html">Working on Primary DNS server</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

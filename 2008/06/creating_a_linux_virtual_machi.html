@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Creating a Linux Virtual Machine (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/05/test_drive_movabletype_41_and.html" title="Test drive MovableType 4.1 and plugins" />
+   <link rel="next" href="../../2008/06/administrating_vmware_servers.html" title="Administrating VMware Server's Guest OS using scripts" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/06/creating_a_linux_virtual_machi.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/92.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Creating a Linux Virtual Machine"
+    dc:identifier="../../2008/06/creating_a_linux_virtual_machi.html"
+    dc:subject="Linux and Unix"
+    dc:description="Installing Fedora 9 on VMware server"
+    dc:creator="Alfred Loo"
+    dc:date="2008-06-24T18:46:29+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/05/test_drive_movabletype_41_and.html">&laquo; Test drive MovableType 4.1 and plugins</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/06/administrating_vmware_servers.html">Administrating VMware Server's Guest OS using scripts &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Creating a Linux Virtual Machine</h2>
+                     <div class="entry" id="entry-661">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Recently I have the chance to create a Fedora 9 virtual machine on VMware server.  This is to replaced a crashed server that ran out of disk space.  Since it was running off a Compaq ML server.  I thought this is an excellent opportunity to remove the hardware element by converting it to a virtual server.</p>
+
+<p>Over all, it was a most interesting experience for a Windows geek.  Mundane things that are taken for granted requires lots of typing in the Linux world. In the end it still might not work.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>After installing the server, I tried installing VMware Tools.  Simple stuff like mount the CD and install the RPM.  Oops forgot I need to run the vmtools-config.pl.</p>
+
+<p>Never mind, just run it and the installer complained that the drivers is not compatible with my kernel.  Do I want to recompile?  Where is my gcc?  Oops no gcc, so installed that.  Where is my kernel source C headers?  Can't find it anywhere on the Net or on yum.  Strange. Re-run and choose no instead.  Config vmtools to run as a service.  Next.</p>
+
+<p>Need to move the user home folders off the root partition or they might kill the server.  Which they successfully did on the old server.  Turn off the VM and add harddisks.  Now how to add the new disks.  Mount and dmesg gave alot of info but nothing to go forward.  Google tells me that each disk is labeled sda, sdb etc. I have to create a partition using fdisk and format it.  Thereafter the new partition can be mounted which is now /dev/sdb1. </p>
+
+<p>The original crashed server was running some scripts to send stuff around and perform regular disk housekeeping.</p>
+
+<p>Time for crontab to do its magic.  Placed the scripts in /usr/local for simple retrieval.  Create a file in cron.d to do the scheduling.  Strangely crond kept logging in /var/log/cron that there is a bad command in my schedule file. After reading the last part of crontab(5), it appears that I need to put the username in each line in between the time and the command.  This is because cron.d is a system wide cron job.</p>
+
+<p>Hey presto it is now working!  Now to create that 800+ users.</p>
+
+<p>The links are here:<br />
+<a href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=340">VMware tools</a>, <a href="http://en.wikipedia.org/wiki/Dmesg">dmesg</a>, <br />
+<a href="http://www.matttopper.com/?p=25">  How to add a new disk in Linux VM </a>    <br />
+<a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?crontab+5">crontab(5)<br />
+</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=headers&amp;blog_id=1" rel="tag">headers</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=kernel&amp;blog_id=1" rel="tag">kernel</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Linux&amp;blog_id=1" rel="tag">Linux</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=partition&amp;blog_id=1" rel="tag">partition</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=source&amp;blog_id=1" rel="tag">source</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=VMware&amp;blog_id=1" rel="tag">VMware</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on June 24, 2008  6:46 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/06/creating_a_linux_virtual_machi.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>June 24, 2008  6:46 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/05/test_drive_movabletype_41_and.html">Test drive MovableType 4.1 and plugins</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/06/administrating_vmware_servers.html">Administrating VMware Server's Guest OS using scripts</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

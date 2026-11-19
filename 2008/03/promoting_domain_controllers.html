@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Promoting Domain Controllers (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/03/malaysian_election_2008.html" title="Malaysian Election 2008" />
+   <link rel="next" href="../../2008/03/trend_micro_officescan_and_ser.html" title="Trend Micro OfficeScan and ServerProtect" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/03/promoting_domain_controllers.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/80.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Promoting Domain Controllers"
+    dc:identifier="../../2008/03/promoting_domain_controllers.html"
+    dc:subject="Work"
+    dc:description="Promoting Domain Controllers"
+    dc:creator="Alfred Loo"
+    dc:date="2008-03-18T23:59:50+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/03/malaysian_election_2008.html">&laquo; Malaysian Election 2008</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/03/trend_micro_officescan_and_ser.html">Trend Micro OfficeScan and ServerProtect &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Promoting Domain Controllers</h2>
+                     <div class="entry" id="entry-649">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Domain controllers for Windows rely on the DNS to work and find each other through SRV records.  If the DNS is not available, the domain controllers don't work very well.</p>
+
+<p>For member server, the DNS settings are typically any of the  domain controllers.  For Domain controllers, the DNS server should be set to its opposite partner as primary and itself as secondary.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>If you don't do this, you will find that when performing DCPROMO, the domain controller will not replicate properly and the rest of the domain will not be able to recognize it.  In the end you may not be able to login and the end result is to force a demotion using DCPROMO /forceremoval.</p>
+
+<p>Forceremoval method is preferred because it save you the trouble of explaining to the Enterprise Administrator why you want to perform an AD cleanup </p>
+
+<p>Checklist for Domain controllers is <a href="http://technet2.microsoft.com/windowsserver/en/library/9c0f86c4-def6-42f5-9c1d-a9292b4905821033.mspx?mfr=true">here</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Windows&amp;blog_id=1" rel="tag">Windows</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on March 18, 2008 11:59 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/03/promoting_domain_controllers.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>March 18, 2008 11:59 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/03/malaysian_election_2008.html">Malaysian Election 2008</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/03/trend_micro_officescan_and_ser.html">Trend Micro OfficeScan and ServerProtect</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

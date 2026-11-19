@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Exchange 2007 on a VM (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/08/next_project.html" title="Next project" />
+   <link rel="next" href="../../2008/08/taking_a_long_time_view_verita.html" title="Taking a long time view Veritas job history" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/08/exchange_2007_on_a_vm.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/110.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Exchange 2007 on a VM"
+    dc:identifier="../../2008/08/exchange_2007_on_a_vm.html"
+    dc:subject="VMware"
+    dc:description="Running Exchange 2007 on a notebook"
+    dc:creator="Alfred Loo"
+    dc:date="2008-08-11T23:42:17+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/08/next_project.html">&laquo; Next project</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/08/taking_a_long_time_view_verita.html">Taking a long time view Veritas job history &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Exchange 2007 on a VM</h2>
+                     <div class="entry" id="entry-679">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>I need some face time with Exchange 2007.  My previous two attempts to run it off the company's data center servers, almost always got hijacked.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>There was a big VIP meeting and the servers got pulled to support the backend.  On top of that, add some customer requests, my VMs ended up being toast.</p>
+
+<p>The next best thing was to run it as a guest on my notebook.  Surprisingly it turn in a reasonable performance. I will try to post the loadgen results once it finishes.</p>
+
+<p>Update.  Here it is.  The guest setup is 1 CPU, 384MB ram with 2x 8GB disks, on a Lenovo 3000 N100, 1GB RAM and 1.73G CPU.  I think I need to increase the number of test users.</p>
+
+<blockquote>Microsoft Exchange Server Load Generator
+
+<p>Test Result SummaryResult: Succeeded <br />
+Topology ConfigurationTarget forest:  CONTOSO <br />
+Total number of user groups:  2 <br />
+Total number of users:  6 <br />
+Total number of distribution lists:  0 <br />
+Total number of dynamic distribution lists:  6 <br />
+Total number of contacts:  0 <br />
+Total number of external recipients:  2 </p>
+
+<p>Simulation StatisticsSimulation started:  8/12/2008 9:46:05 AM <br />
+Scheduled run length:  00D:00H:40M:00S <br />
+Actual run length:  00D:00H:40M:22S <br />
+Stress mode:  True <br />
+Remote:  False <br />
+Load Generator Status* Note that if the load generator client only runs user groups with scripted modules, its task counters are expected to be zero. <br />
+Type Name Task Exceptions Task Queue Length Task Skipped Tasks Completed Task Dispatched <br />
+Master SG 54678 0 0 175369 175369 <br />
+ </p>
+
+<p>UserGroupsLoading... <br />
+ Name Succeeded Client Type Action Profile User Count Tasks per User Day TasksCompleted <br />
+ UserGroup2 Succeeded Outlook 2007 Online Heavy 3 132 139869 <br />
+  Task Execution Statistics <br />
+ Task Name Count Actual Distribution(%) Configured Distribution(%) Average Latency 95th Percentile Latency <br />
+BrowseCalendar 12670 9 9 11 11 <br />
+BrowseContacts 10755 7 7 13 11 <br />
+BrowsePublicFolder 0 0 0 0 0 <br />
+BrowseTasks 0 0 0 0 0 <br />
+CreateContact 2102 1 0 217 1455 <br />
+CreateFolder 0 0 0 0 0 <br />
+CreateTask 1031 0 0 1984 6600 <br />
+DeleteMail 0 0 0 0 0 <br />
+DownloadOab 1075 0 0 0 0 <br />
+EditRules 0 0 0 0 0 <br />
+EditSmartFolders 0 0 0 0 0 <br />
+ExportMail 0 0 0 0 0 <br />
+InitializeMailbox 0 0 0 0 0 <br />
+Logoff 3174 2 2 3 2 <br />
+Logon 3 0 0 21166 21298 <br />
+MakeAppointment 1038 0 1 20213 76231 <br />
+ModuleInit 1 0 0 296 296 <br />
+ModuleTerm 0 0 0 0 0 <br />
+MoveMail 0 0 0 0 0 <br />
+PostFreeBusy 4116 2 3 1 0 <br />
+PublicFolderPost 0 0 0 0 0 <br />
+ReadAndProcessMessages 84661 60 60 12 11 <br />
+RequestMeeting 2142 1 1 0 0 <br />
+Search 0 0 0 0 0 <br />
+SendMail 17101 12 12 1644 5018 <br />
+SynchronizeFolders 0 0 0 0 0 <br />
+UserInit 0 0 0 0 0 <br />
+UserTerm 0 0 0 0 0 <br />
+ <br />
+ Task Exceptions Statistics <br />
+ Type Count <br />
+Microsoft.Exchange.Swordfish.SwordfishException 11 <br />
+Microsoft.Mapi.MapiExceptionQuotaExceeded 99 <br />
+Microsoft.Mapi.MapiExceptionSessionLimit 14121 <br />
+Microsoft.Mapi.MapiExceptionShutoffQuotaExceeded 20853 <br />
+ <br />
+ <br />
+ UserGroup3 Succeeded Outlook 2003 Online Heavy 3 132 35500 <br />
+ </blockquote><br />
+</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Exchange&amp;blog_id=1" rel="tag">Exchange</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=VMware&amp;blog_id=1" rel="tag">VMware</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on August 11, 2008 11:42 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/08/exchange_2007_on_a_vm.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>August 11, 2008 11:42 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/08/next_project.html">Next project</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/08/taking_a_long_time_view_verita.html">Taking a long time view Veritas job history</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

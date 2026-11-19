@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Playing with Netbackup II (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/09/playing_with_netbackup.html" title="Playing with Netbackup I" />
+   <link rel="next" href="../../2008/10/installing_windows_2008_using.html" title="Installing Windows 2008 using HP SmartStart 8.1" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/09/playing_with_netbackup_ii.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/116.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Playing with Netbackup II"
+    dc:identifier="../../2008/09/playing_with_netbackup_ii.html"
+    dc:subject="Data Backup"
+    dc:description="Symantec Netbackup Media server, SAN media server and SAN client"
+    dc:creator="Alfred Loo"
+    dc:date="2008-09-28T10:16:29+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/09/playing_with_netbackup.html">&laquo; Playing with Netbackup I</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/10/installing_windows_2008_using.html">Installing Windows 2008 using HP SmartStart 8.1 &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Playing with Netbackup II</h2>
+                     <div class="entry" id="entry-685">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Some important Netbackup terminology that you should know but are buried deep in the PDF docs.  You need to settle on the method of backup before committing to buy the licenses.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p><strong>Licensing</strong></p>
+
+<p>Standard Client - Client license for backup via LAN.</p>
+
+<p>Enterprise Client - SAN Media Server, SAN Client, Snapshot client. SAN Media Server are Media server that can only backup itself via SAN. It is also a Standard client.</p>
+
+<p>Enterprise Server - Media servers that can backup itself and others via SAN.  It offloads the work from the master server. It is also a Standard client.  Not to be confused different editions of Netbackup, Netbackup Enterprise Server, Netbackup Server and Netbackup Starter Pack.</p>
+
+<p>The Enterprise Server costs much more than Enterprise Client.</p>
+
+<p>SAN Client - These clients that do not have access to tape, it can send data via SAN to a FT Media server that has.</p>
+
+<p>Not commonly used.</p>
+
+<p>This is the second part of a two part article on <a href="../../2008/09/playing_with_netbackup.html">Netbackup</a>.<br />
+<a href="http://www4.symantec.com/Vrt/wl?a_id=41123&dest_url=153-225-197-133-113-114-101-94-135-223-173-110-142-182-142-39-102-86-13-53-231-17-34-226-250-253-199-254-100-57-141-75-11-19-19-119-68-136-49-165-10-37-79-25-176-178-63-209-111-50-151-105-122-64-250-136-39-86-97-152-55-235-185-100-75-66-209-223-120-70-87-121-125-97-245-153-248-90-109-119-80-53-201-37-88-120-145-148-245-66-162-51-160-19-149-204-149-173-197-6-189-80-197-17-213-47-59-34-33-64-45-237-147-152-37-53-235-110-217-95&isEncr=Y&"><br />
+Link</a>  <a href="http://www.symantec.com/business/products/datasheets.jsp?pcid=2244&pvid=2_1">Other options available</a>  <a href="http://eval.symantec.com/mktginfo/enterprise/fact_sheets/ent-datasheet_nbu_6.5_core_09-2007.en-us.pdf">Core</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Symantec&amp;blog_id=1" rel="tag">Symantec</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on September 28, 2008 10:16 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/09/playing_with_netbackup_ii.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>September 28, 2008 10:16 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/09/playing_with_netbackup.html">Playing with Netbackup I</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/10/installing_windows_2008_using.html">Installing Windows 2008 using HP SmartStart 8.1</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

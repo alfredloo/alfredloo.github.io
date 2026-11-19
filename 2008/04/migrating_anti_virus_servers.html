@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Migrating Anti Virus Servers (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/03/restoring_customer_confidence.html" title="Restoring customer confidence" />
+   <link rel="next" href="../../2008/04/hfmd.html" title="HFMD" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/04/migrating_anti_virus_servers.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/84.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Migrating Anti Virus Servers"
+    dc:identifier="../../2008/04/migrating_anti_virus_servers.html"
+    dc:subject="Work"
+    dc:description="Working on the Anti Virus Management servers"
+    dc:creator="Alfred Loo"
+    dc:date="2008-04-03T01:17:22+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/03/restoring_customer_confidence.html">&laquo; Restoring customer confidence</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/04/hfmd.html">HFMD &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Migrating Anti Virus Servers</h2>
+                     <div class="entry" id="entry-653">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>This is much more complicated than what it seems.  If you are not careful, you may end up doing a floor by floor audit.</p>
+
+<p>If you need to work on the management server or information server, you might want to export the list of current users, online and offline.  This is especially critical if you are doing major version upgrades or moving clients to new servers.  </p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>After the works, compare with the users shown in the server and the exported list.  Manually cross check for if the users still exists.  Missing users if any should be rectified immediately.  If you have stringent endpoint security in place, these users will lose their network connectivity when the patterns go out of date.  </p>
+
+<p>Thereafter monitor the status for successful deployment of pattern and engine updates to all users.</p>
+
+<p>Now you can see the importance of having the original list of users.  If you have not done it, there is no way of knowing if any of the users lost connection with management server.<br />
+</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on April  3, 2008  1:17 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/04/migrating_anti_virus_servers.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>April  3, 2008  1:17 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/03/restoring_customer_confidence.html">Restoring customer confidence</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/04/hfmd.html">HFMD</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

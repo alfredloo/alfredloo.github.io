@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Disk to Disk cloning a server (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/07/mass_import_into_movable_type.html" title="Mass Import into Movable Type 4 is now broken" />
+   <link rel="next" href="../../2008/07/what_is_the_equivalent_command.html" title="What is the equivalent command for  ??? in Linux?" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/07/disk_to_disk_cloning_a_server.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/96.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Disk to Disk cloning a server"
+    dc:identifier="../../2008/07/disk_to_disk_cloning_a_server.html"
+    dc:subject="Linux and Unix"
+    dc:description="Disk to disk cloning in Unix"
+    dc:creator="Alfred Loo"
+    dc:date="2008-07-15T13:00:33+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/07/mass_import_into_movable_type.html">&laquo; Mass Import into Movable Type 4 is now broken</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/07/what_is_the_equivalent_command.html">What is the equivalent command for  ??? in Linux? &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Disk to Disk cloning a server</h2>
+                     <div class="entry" id="entry-665">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Disk to disk cloning a server is a really old way of cloning.  Insert a new disk of similar size, boot an independant OS eg Live CD, Ubuntu or Knoppix to clone from old to new disk.</p>
+
+<p>Except that the CD drive is not working and I cannot power down the really old server. So it is single user mode time.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>Single user mode is when the OS is shutdown, leaving a bare minimum and everything runs off RAM so there is no worry about the state of the disks.</p>
+
+<p>Before going to single user mode, print out the configuration of the disks from mount, fstab and format (Solaris) or fdisk (Linux)</p>
+
+<p>mount</p>
+
+<blockquote><blockquote>/ on /dev/dsk/c0t0d0s0 read/write/setuid/intr/largefiles/onerror=panic/dev=800000 on Wed Jun 22 22:22:22 2008
+/proc on /proc read/write/setuid/dev=3a80000 on Wed Jun 22 22:22:22 2008
+/etc/mnttab on mnttab read/write/setuid/dev=3c40000 on Wed Jun 22 22:22:22 2008
+/var/run on swap read/write/setuid/dev=1 on Wed Jun 22 22:22:22 2008
+/tmp on swap read/write/setuid/dev=2 on Wed Jun 22 22:22:22 2008
+/java on /dev/dsk/c0t9d0s6 read/write/setuid/intr/largefiles/onerror=panic/dev=800046 on Wed Jun 22 22:22:22 2008
+/stuff on /dev/dsk/c0t0d0s3 read/write/setuid/intr/largefiles/onerror=panic/dev=800003 on Wed Jun 22 22:22:22 2008
+/stuff1 on /dev/dsk/c0t8d0s7 read/write/setuid/intr/largefiles/onerror=panic/dev=80003f on Wed Jun 22 22:22:22 2008
+/stuff2 on /dev/dsk/c0t9d0s7 read/write/setuid/intr/largefiles/onerror=panic/dev=800047 on Wed Jun 22 22:22:22 2008</blockquote>
+
+<p>more /etc/vfstab</p>
+
+<blockquote>#device         device          mount           FS      fsck    mount   mount
+#to mount       to fsck         point           type    pass    at boot options
+#
+#/dev/dsk/c1d0s2 /dev/rdsk/c1d0s2 /usr          ufs     1       yes     -
+fd              -              /dev/fd          fd      -       no      -
+/proc           -              /proc            proc    -       no      -
+/dev/dsk/c0t0d0s1       -       -               swap    -       no      -
+/dev/dsk/c0t0d0s0       /dev/rdsk/c0t0d0s0      /       ufs     1       no
+-
+/dev/dsk/c0t0d0s3       /dev/rdsk/c0t0d0s3      /stuff ufs     2       yes
+-
+swap            -               /tmp             tmpfs    -       yes     -
+/dev/dsk/c0t9d0s6       /dev/rdsk/c0t9d0s6      /java ufs     2       yes -
+/dev/dsk/c0t9d0s7       /dev/rdsk/c0t9d0s7      /stuff2      ufs     2 yes
+  -
+/dev/dsk/c0t8d0s7       /dev/rdsk/c0t8d0s7      /stuff1     ufs     2 yes
+  -</blockquote>
+
+<p>format</p>
+
+<blockquote>
+AVAILABLE DISK SELECTIONS:
+       0. c0t0d0 <SUN9.0G cyl 4924 alt 2 hd 27 sec 133>
+          /pci@1f,4000/scsi@3/sd@0,0
+       1. c0t8d0 <SUN9.0G cyl 4924 alt 2 hd 27 sec 133>
+          /pci@1f,4000/scsi@3/sd@8,0
+       2. c0t9d0 <SUN9.0G cyl 4924 alt 2 hd 27 sec 133>
+          /pci@1f,4000/scsi@3/sd@9,0
+</blockquote>
+
+<p>In single user mode, run the dd command to duplicate block by block from old to new.</p>
+
+<blockquote>dd if=/dev/rdsk/c0t08d0s* of=/dev/rdsk/c0t011d0s*</blockquote>
+
+<p>* this not a wild card, it means run the dd command 8 times for value 0-7. Make sure the slice numbers are in sync!</p>
+
+<p>Note the OF points to the new disk not listed in the above config.</p>
+
+<p>Links: <a href="http://docs.sun.com/app/docs/doc/817-5093/6mkisoqn1?l=ru&a=view">dd</a>  <a href="http://docs.sun.com/app/docs/doc/816-1058/6m7gjuj66?a=view">vfstab</a>  <a href="http://docs.sun.com/app/docs/doc/819-2240/format-1m?a=view">format</a>  </p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Linux&amp;blog_id=1" rel="tag">Linux</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Unix&amp;blog_id=1" rel="tag">Unix</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on July 15, 2008  1:00 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/07/disk_to_disk_cloning_a_server.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>July 15, 2008  1:00 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/07/mass_import_into_movable_type.html">Mass Import into Movable Type 4 is now broken</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/07/what_is_the_equivalent_command.html">What is the equivalent command for  ??? in Linux?</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

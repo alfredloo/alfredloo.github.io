@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Working on Primary DNS server (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2008/03/trend_micro_officescan_and_ser.html" title="Trend Micro OfficeScan and ServerProtect" />
+   <link rel="next" href="../../2008/03/restoring_customer_confidence.html" title="Restoring customer confidence" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2008/03/working_on_primary_dns_server.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/82.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Working on Primary DNS server"
+    dc:identifier="../../2008/03/working_on_primary_dns_server.html"
+    dc:subject="IT"
+    dc:description="Working on the primary DNS server."
+    dc:creator="Alfred Loo"
+    dc:date="2008-03-20T01:16:49+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2008/03/trend_micro_officescan_and_ser.html">&laquo; Trend Micro OfficeScan and ServerProtect</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2008/03/restoring_customer_confidence.html">Restoring customer confidence &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Working on Primary DNS server</h2>
+                     <div class="entry" id="entry-651">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Primary DNS server, usually a Domain Controller provides the necessary name resolution of Active Directory operations.  It also required for user computer startup and logon.  It is also required for the all important Internet access.</p>
+
+<p>What about the secondary DNS server?  Isn't that what it suppose to stand in when the primary is not available?</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>When the user computer starts up,  it will check for the availability for the primary DNS at "Applying computer settings".  If the primary DNS is turned off, it will just skip and proceed to the secondary DNS server.  If the primary DNS server is available but the DNS is not responding, the user computer may wait a long time for the DNS request to timeout.</p>
+
+<p>The same applies for Internet access.</p>
+
+<p>So what happens if you need to work on the primary DNS for hardware replacement, OS upgrade?  etc.  Both doesn't take very long, but will require off hours.</p>
+
+<p>If you don't have the window to do this, a highly recommended method is to flip the DNS entries in all the servers and DHCP options.  So that you can work in peace.  Alternatively you can swap DNS IP address between the primary and secondary servers.  This at first glance looks like great stuff.  Except that the DHCP server usually found on the DNS server might fail.</p>
+
+<p>DHCP server operations can only be authorized by an Enterprise Admin.  So that is tied down to the IP address.  So you need to factor in an additional step of DHCP migration.</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Windows&amp;blog_id=1" rel="tag">Windows</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on March 20, 2008  1:16 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2008/03/working_on_primary_dns_server.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>March 20, 2008  1:16 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2008/03/trend_micro_officescan_and_ser.html">Trend Micro OfficeScan and ServerProtect</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2008/03/restoring_customer_confidence.html">Restoring customer confidence</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
