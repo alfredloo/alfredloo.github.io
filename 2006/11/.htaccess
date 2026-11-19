@@ -1,0 +1,4 @@
+Options -MultiViews -Indexes
+<FilesMatch "\.php$">
+    Require all denied
+</FilesMatch>
