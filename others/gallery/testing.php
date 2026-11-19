@@ -2,11 +2,11 @@
   // Page Variables
   include ($_SERVER['DOCUMENT_ROOT']."/blogothers/galleryinfo.php");
   $blogrelurl = "/blog";
-  $blogurl = "http://www.alfredivy.per.sg/blog/";
+  $blogurl = "../../";
   $section = "photosolo";
   $pgtitle = "Testing";
   $entryid = 37;
-  $img = '<img alt="DSC_0247.jpg" src="http://www.alfredivy.per.sg/blog/others/DSC_0247-photo.jpg" width="480" height="318" />
+  $img = '<img alt="DSC_0247.jpg" src="../../others/DSC_0247-photo.jpg" width="480" height="318" />
 ';
 
   

@@ -3,7 +3,7 @@
   $pgtitle = "Gallery";
   $section = "index";
   $blogrelurl = "/blog/";
-  $blogurl = "http://www.alfredivy.per.sg/blog/";
+  $blogurl = "../../";
   
   // Functions
   include ($_SERVER['DOCUMENT_ROOT']."/blog/meta/functions/all.php");

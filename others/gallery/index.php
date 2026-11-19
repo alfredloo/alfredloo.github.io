@@ -4,13 +4,13 @@
   $pgtitle = $gallerytitle . " > Gallery";
   $section = "gallery";
   $blogrelurl = "/blog";
-  $blogurl = "http://www.alfredivy.per.sg/blog/";
+  $blogurl = "../../";
 
   // Functions
   include ($_SERVER['DOCUMENT_ROOT']."/blogmeta/functions/all.php");
   
   $imgs[] = Array(
-    "str" => '<img alt="DSC_0247.jpg" src="http://www.alfredivy.per.sg/blog/others/DSC_0247-thumb.jpg" width="90" height="59" />
+    "str" => '<img alt="DSC_0247.jpg" src="../../others/DSC_0247-thumb.jpg" width="90" height="59" />
 ',
     "lnk" => '/blog/others/gallery/testing.php',
     "tag" => ''

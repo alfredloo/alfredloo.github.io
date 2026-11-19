@@ -6,8 +6,8 @@
   $pgtitle = $gallerytitle;
   $section = "title auto";
   $blogrelurl = "/blog";
-  $blogurl = "http://www.alfredivy.per.sg/blog/";
-  $img = '<img alt="DSC_0247.jpg" src="http://www.alfredivy.per.sg/blog/others/DSC_0247-photo.jpg" width="480" height="318" />
+  $blogurl = "../../";
+  $img = '<img alt="DSC_0247.jpg" src="../../others/DSC_0247-photo.jpg" width="480" height="318" />
 ';
     
   // Functions
@@ -17,7 +17,7 @@
   ContentOpen();
 ?>
 
-  <div id="titleimg"><a href="gallery/"><img alt="DSC_0247.jpg" src="http://www.alfredivy.per.sg/blog/others/DSC_0247-photo.jpg" width="480" height="318" />
+  <div id="titleimg"><a href="gallery/"><img alt="DSC_0247.jpg" src="../../others/DSC_0247-photo.jpg" width="480" height="318" />
 </a></div>
   
   <div id="gallerydesc">

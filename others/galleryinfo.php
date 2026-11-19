@@ -4,7 +4,7 @@
   $gallerydesc = '<em>No description</em>';
   $gallerycount = 1;
   $galleryurl = "/blogothers/";
-  $fullgalleryurl = "http://www.alfredivy.per.sg/blogothers/";
+  $fullgalleryurl = "../..others/";
   
 
 ?>
