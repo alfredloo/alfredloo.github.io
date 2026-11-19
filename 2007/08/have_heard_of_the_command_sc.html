@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Have you heard of the command SC? (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/08/hp_bladesystem_cclass.html" title="HP BladeSystem c-Class" />
+   <link rel="next" href="../../2007/09/cloning_the_hp_way.html" title="Cloning the HP way" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/08/have_heard_of_the_command_sc.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/54.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Have you heard of the command SC?"
+    dc:identifier="../../2007/08/have_heard_of_the_command_sc.html"
+    dc:subject="IT"
+    dc:description="Introduction to SC"
+    dc:creator="Alfred Loo"
+    dc:date="2007-08-27T08:57:16+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/08/hp_bladesystem_cclass.html">&laquo; HP BladeSystem c-Class</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/09/cloning_the_hp_way.html">Cloning the HP way &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Have you heard of the command SC?</h2>
+                     <div class="entry" id="entry-623">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Most of us are familiar with the famous NET command since the Windows NT days.  The NET command to handle network services is part of the NTLM and LAN Manager coming from the days of MS-DOS.  </p>
+
+<p>Now we have Windows 2003 and the NET command don't quite make it, as it does not show the service properties completely.  </p>
+
+<p>Enter the SC command.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>From Microsoft website:</p>
+
+<blockquote>"Communicates with the Service Controller and installed services. SC.exe retrieves and sets control information about services. You can use SC.exe for testing and debugging service programs. Service properties stored in the registry can be set to control how service applications are started at boot time and run as background processes. "</blockquote>
+
+<p>From my Windows XP computer, when I type SC in a command window:</p>
+
+<blockquote>DESCRIPTION:
+        SC is a command line program used for communicating with the
+        NT Service Controller and services.
+USAGE:
+        sc <server> [command] [service name] <option1> <option2>...
+
+<p>        The option <server> has the form "\\ServerName"<br />
+        Further help on commands can be obtained by typing: "sc [command]"<br />
+        Commands:<br />
+          query-----------Queries the status for a service, or<br />
+                          enumerates the status for types of services.<br />
+          queryex---------Queries the extended status for a service, or<br />
+                          enumerates the status for types of services.<br />
+          start-----------Starts a service.<br />
+          pause-----------Sends a PAUSE control request to a service.<br />
+          interrogate-----Sends an INTERROGATE control request to a service.<br />
+          continue--------Sends a CONTINUE control request to a service.<br />
+          stop------------Sends a STOP request to a service.<br />
+          config----------Changes the configuration of a service (persistant<br />
+          description-----Changes the description of a service.<br />
+          failure---------Changes the actions taken by a service upon failur<br />
+          qc--------------Queries the configuration information for a servic<br />
+          qdescription----Queries the description for a service.<br />
+          qfailure--------Queries the actions taken by a service upon failur<br />
+          delete----------Deletes a service (from the registry).<br />
+          create----------Creates a service. (adds it to the registry).<br />
+          control---------Sends a control to a service.<br />
+          sdshow----------Displays a service's security descriptor.<br />
+          sdset-----------Sets a service's security descriptor.<br />
+          GetDisplayName--Gets the DisplayName for a service.<br />
+          GetKeyName------Gets the ServiceKeyName for a service.<br />
+          EnumDepend------Enumerates Service Dependencies.</p>
+
+<p>        The following commands don't require a service name:<br />
+        sc <server> <command> <option><br />
+          boot------------(ok | bad) Indicates whether the last boot should<br />
+                          be saved as the last-known-good boot configuration<br />
+          Lock------------Locks the Service Database<br />
+          QueryLock-------Queries the LockStatus for the SCManager Database<br />
+EXAMPLE:<br />
+        sc start MyService</p>
+
+<p>Would you like to see help for the QUERY and QUERYEX commands? [ y | n ]:</blockquote></p>
+
+<p>This looks really interesting as I have a server migrated using Server Migration Pack - Physical to ProLiant Edition.  The services don't start properly, especially RPC Server, Network Connections, Workstation and Server.</p>
+
+<p>In addition, I can't view the detail entries in the Event Viewer and the properties of the services in Services MMC.</p>
+
+<p>SC has a query module to list the properties of the services.  Perhaps the above mentioned critical services got their Logon Account messed up and I can use SC to fix this.</p>
+
+<p>More details later.<br />
+</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on August 27, 2007  8:57 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/08/have_heard_of_the_command_sc.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>August 27, 2007  8:57 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/08/hp_bladesystem_cclass.html">HP BladeSystem c-Class</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/09/cloning_the_hp_way.html">Cloning the HP way</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

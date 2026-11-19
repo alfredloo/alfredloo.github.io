@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Windows 2000 and ML310 G4 (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/06/disaster_recovery_and_backup_s.html" title="Disaster Recovery and backup software" />
+   <link rel="next" href="../../2007/07/if_you_need_to_do_anything_imp.html" title="If you need to do anything important write it down." />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/07/windows_2000_and_ml310_g4.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/51.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Windows 2000 and ML310 G4"
+    dc:identifier="../../2007/07/windows_2000_and_ml310_g4.html"
+    dc:subject="IT"
+    dc:description="The mission if you choose to accept is to install Windows 2000 on a HP ML310 G4. Sound simple, except that HP does not support this configuration. To make things even more interesting, onboard SATA RAID! Windows 2000 does not..."
+    dc:creator="Alfred Loo"
+    dc:date="2007-07-01T23:23:54+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/06/disaster_recovery_and_backup_s.html">&laquo; Disaster Recovery and backup software</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/07/if_you_need_to_do_anything_imp.html">If you need to do anything important write it down. &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Windows 2000 and ML310 G4</h2>
+                     <div class="entry" id="entry-603">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>The mission if you choose to accept is to install Windows 2000 on a HP ML310 G4.  Sound simple, except that HP does not support this configuration.  To make things even more interesting, onboard SATA RAID!</p>
+
+<p>Windows 2000 does not support SATA or SATA RAID natively.  You have to provide a driver at the start of installation using F6.  Windows 2003 does not have this problem. Since HP does not support this configuration, there are no drivers available.  Using the Windows 2003 driver at HP <a href="http://www.hp.com/servers/proliantML310">website</a> is able to recognize the RAID volume but on reboot to start the Windows based installer, it gave a blue screen.  Strangely this is an Adaptec driver.</p>
+
+<p>On bootup, it shows "Intel 82801GR SATA RAID Controller".  Searching through Intel website, reveals that it is part of the ICH7R chipset and that the controller does not use AHCI mode.  Downloaded Intel Matrix Storage Manager in various versions.  Some can't recognize the SATA RAID controller, some could except it lists all the physical drives!</p>
+
+<p>After two days of fruitless search, time to ask for help.  A colleague remembered a similar situation and suggested using Adaptec drivers.  Downloaded Adaptec's ICH7R drivers and hey presto!  The installer can recognize the RAID volume and installed the operating system successfully.</p>
+
+<p>After installation, in the Device Manager, there was a long list of question marks as Windows 2000 does not have the appropriate drivers.  Installed Proliant Support Pack (PSP) 7.7 for the ML310 G4.  Fixed almost of it except for USB controller.  <Sigh> That is going to cause a problem.  Installed PSP 7.6, which is for the G3 version of the server and fixed the USB controller driver issue.</p>
+
+<p>Time to test the RAID functionality.  Pulled out  and push back one of the harddisks and during bootup it shows as RAID degraded.  Login to HP Systems Management webpage, it showed nothing degraded.  Started the Array Controller Unit (ACU), it reported none found.  It seems that HP Systems tools cannot manage the RAID card.  This is going to cause a really big problem.</p>
+
+<p>Since I am using Adaptec drivers that work and Intel drivers can't, time to go fully Adaptec.  Downloaded Adaptec Storage Manager v 5.00.16806. It recognizes the SATA RAID card and the degarded RAID volume!. Started the RAID rebuilding. After 24 hours it has completed 68%.  Hmmmm.  </p>
+
+<p>This chipset relies on the mainboard CPU to do all the hard work.  Whereas in a standard RAID card, there is a seperate dedicated CPU for the RAID computation processes.</p>
+
+<p>So at the end of the day, I end up using Adaptec driver and storage manager for an Intel chipset. The RAID driver is operating in AHCI mode!  Makes you wonder what in the world is going on.</p>
+                           </div>
+                           
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on July  1, 2007 11:23 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/07/windows_2000_and_ml310_g4.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                                          <div id="comments" class="comments">
+                                                                                 <div class="comments-content">
+                                 <h3 class="comments-header">Comments (8)</h3>
+                           
+                                 <a id="c004187"></a>
+                                 <div class="comment" id="comment-4187">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          AL:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Surprise, surprise. I got my first request for assistance based on this post.</p>
+
+<p>Well for those that are wondering, the SATA drivers can be downloaded here. ftp://ftp.supermicro.com/</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          AL  |
+                                          <a href="#comment-4187">August 19, 2007  9:06 PM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4187" title="Permalink to this comment">August 19, 2007 21:06</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004196"></a>
+                                 <div class="comment" id="comment-4196">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          <a href="http://www.FiLEWALKER.de" rel="nofollow">Stefan Zwosta (FiLEWALKER.de)</a>:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Thank you for your very valuable article! i just had quite the same problem installing Windows 2003 Server R2 onto a ML 310 G4.</p>
+
+<p>After hours of trying to get that Intel SATA-Raid running i luckily found your article. ItÂ´s a great hint using the Adaptec Drivers with Intels ICH7R Chipset.</p>
+
+<p>Greetings from Germany,</p>
+
+<p>S.Z.</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          <a href="http://www.FiLEWALKER.de" rel="nofollow">Stefan Zwosta (FiLEWALKER.de)</a>  |
+                                          <a href="#comment-4196">June 30, 2008  8:43 PM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4196" title="Permalink to this comment">June 30, 2008 20:43</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004197"></a>
+                                 <div class="comment" id="comment-4197">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          AL:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Stefan,</p>
+
+<p>  Firstly, Windows 2003 is supported on the ML310, you should not have any problems with the installation, just use the Smart Start CD.</p>
+
+<p>  Secondly, in May 2008, this server, actually the customer's server started having really weird problems.  It will freeze 10~50 minutes after bootup.  The time period is random.  We days and nights trying to solve it, in the end we did a reinstall to clear it.</p>
+
+<p>  Looking back, I remembered that the controller was trying to verify mirror everytime we bootup.</p>
+
+<p>  If you encounter similar problems, you might want to stop the server at boot to let it complete verifying.</p>
+
+<p>regards<br />
+AL</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          AL  |
+                                          <a href="#comment-4197">July 15, 2008 12:53 PM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4197" title="Permalink to this comment">July 15, 2008 12:53</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004198"></a>
+                                 <div class="comment" id="comment-4198">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          <a href="http://www.FiLEWALKER.de" rel="nofollow">Stefan Zwosta (FiLEWALKER.de)</a>:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Hi Al,</p>
+
+<p>well - i was not able to switch to SATA-Raid and then use the SmartStart-CD because it did not find the correct controller and claimed always there would be zero bytes of space left.</p>
+
+<p>I tried using SmartStart-CD from v7.80, v7.91, and 8.0 - always had the same problem recognizing the raid mirror set with the correct free space.</p>
+
+<p>At least your solution worked!</p>
+
+<p>I donÂ´t have any problems running the server in mirror mode. But thank you for the hint.</p>
+
+<p>Greetings + Regards</p>
+
+<p>S.Z.</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          <a href="http://www.FiLEWALKER.de" rel="nofollow">Stefan Zwosta (FiLEWALKER.de)</a>  |
+                                          <a href="#comment-4198">July 15, 2008 11:21 PM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4198" title="Permalink to this comment">July 15, 2008 23:21</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004199"></a>
+                                 <div class="comment" id="comment-4199">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          Emanuele Roserba:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Al wrote:<br />
+>Firstly, Windows 2003 is supported on the ML310,<br />
+>you should not have any problems with the<br />
+>installation, just use the Smart Start CD.</p>
+
+<p>Thats wrong if you try to install using the integrated Raid card as boot controller because SmartStart actually supports only SmartArray controllers (eg. HP E200, P400 etc.)</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          Emanuele Roserba  |
+                                          <a href="#comment-4199">October 15, 2008 10:43 PM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4199" title="Permalink to this comment">October 15, 2008 22:43</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004200"></a>
+                                 <div class="comment" id="comment-4200">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          AL:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Thank you for your info.  I didn't know that.</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          AL  |
+                                          <a href="#comment-4200">October 21, 2008 10:36 AM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4200" title="Permalink to this comment">October 21, 2008 10:36</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004206"></a>
+                                 <div class="comment" id="comment-4206">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          Jeff Burdine:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>"Using the Windows 2003 driver at HP website is able to recognize the RAID volume but on reboot to start the Windows based installer, it gave a blue screen."</p>
+
+<p>I attempted an install of server 2003 R2 using the embedded SATA RAID config and got the exact same result. After hours of troubleshooting I found your post. I am attempting your solution currently.  Wish me luck :)<br />
+Proliant ML310 G3 using adaptec embedded RAID</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          Jeff Burdine  |
+                                          <a href="#comment-4206">August 12, 2010  6:55 AM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4206" title="Permalink to this comment">August 12, 2010 06:55</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                           
+                                                   
+                                 <a id="c004207"></a>
+                                 <div class="comment" id="comment-4207">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          Jeff Burdine:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>Worked like a dream!!  Now if only I hadn't wasted all that time on HP's website looking for a solution.  Thanks for taking the time to detail this solution.<br />
+Proliant ML310 G3 using adaptec embedded RAID</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          Jeff Burdine  |
+                                          <a href="#comment-4207">August 12, 2010  7:05 AM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4207" title="Permalink to this comment">August 12, 2010 07:05</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                                                         </div>
+                           
+                        
+
+                         
+                        <form method="post" action="https://www.alfredivy.sg/cgi-bin/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="603" />
+                           <script type="text/javascript">obfuscator('LrqYHNqqYp', 'vNhWZXckRdFyxeJ2A7EOi4fPtLn8z6BrsTVaQHbYlC5wuUgDK3S0p1j9IoMqGm', 'hidden_input', '', '');</script>
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-open-header">Post a comment</h2>
+                              
+                              <div class="comments-open-content">
+                                 <script type="text/javascript">
+                                 <!--
+                                 writeTypeKeyGreeting(commenter_name, 603);
+                                 //-->
+                                 </script>
+                              
+                                                                  <p class="comments-open-moderated">
+                                    (If you haven't left a comment here before, you may need to be approved by the site owner before your comment will appear. Until then, it won't appear on the entry. Thanks for waiting.)
+                                 </p>
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: (you may use HTML tags for style)</label>
+                                    <textarea id="comment-text" name="text" rows="15" cols="50"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>July  1, 2007 11:23 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/06/disaster_recovery_and_backup_s.html">Disaster Recovery and backup software</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/07/if_you_need_to_do_anything_imp.html">If you need to do anything important write it down.</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>VMware ESX 3.02 (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/09/bourne_ultimatum.html" title="Bourne Ultimatum" />
+   <link rel="next" href="../../2007/09/backing_up_vmware_esx_302_usin.html" title="Backing up VMware ESX 3.02 using Symantec 11d" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/09/vmware_esx_302.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/56.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="VMware ESX 3.02"
+    dc:identifier="../../2007/09/vmware_esx_302.html"
+    dc:subject="VMware"
+    dc:description="Installing VMware Standard ESX server 3.02 and managing it."
+    dc:creator="Alfred Loo"
+    dc:date="2007-09-28T16:29:58+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/09/bourne_ultimatum.html">&laquo; Bourne Ultimatum</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/09/backing_up_vmware_esx_302_usin.html">Backing up VMware ESX 3.02 using Symantec 11d &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">VMware ESX 3.02</h2>
+                     <div class="entry" id="entry-625">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Installed my first ESX server on a HP DL380 G5, quite an interesting experience.  Overall the process is very smooth. The server is a standard edition, so I just accepted all the suggested defaults.  My datastore is going to be on an iSCSI enabled NAS server, so the installer defaults will not affect the datastore.  Note that the Qlogic iSCSI card should be PCI-X as the ESX 3.02 installer does not recognize the PCI-e cards.  The one I used was QLA 40222.  Strangely not listed on the website.</p>
+
+<p>The network for the iSCSI traffic should be on its own private LAN for reliability and throughput.  Ideally, seperate NICs and switches as the traffic is really high.<br />
+</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>After bringing up the ESX server. the first order of business is to install the HP management agent or HP SIM will not recognize it.  HP has forked the code for ESX 2.5 and 3.x management agent.  Make sure you install the right one!  I installed the HP Insight Manager agents for VMware ver 7.80.</p>
+
+<p>Once HP SIM can recognize the ESX, you can register it in the Virtual Machine Management, so that you can manage, monitor the virtual machines.  If you run out of VMM licenses, you still can monitor the virtual machines like any physical servers except that you don't get the VMware style of stop/start the machine and other cool stuff.  </p>
+
+<p>If you are going to create multiple new virtual machines, as opposed to server migration via P2V, you might want to create a master template server and sysprep it.  Don't forget to put in the license key!</p>
+
+<p>P2V can be performed using the Server Migration Pack (SMP) or VMware's free Converter.  Note SMP does not work on domain controllers, whereas VMware Converter performs fine.  This is due to the different mode of operation.  HP SMP install an agent on the source server which will controll the P2V process.  The agent is unable to install on a domain controller due to protection of the Active Directory.  In the VMware Converter process, you use it to boot the source server and it works off the CD to migrate to an ESX or VMware Server.  HP SMP uses iSCSI, whereas VMware Converter uses CIFS with VMware Server.</p>
+
+<p>A note of caution NT servers generally do not convert well as the OS is too old to handle the device drivers.</p>
+
+<p>VMware supported hardware see <a href="http://www.vmware.com/pdf/vi3_systems_guide.pdf">here</a>, <a href="http://www.vmware.com/pdf/vi3_io_guide.pdf">here</a> and <a href="http://www.vmware.com/pdf/vi3_san_guide.pdf">here</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=VMware&amp;blog_id=1" rel="tag">VMware</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on September 28, 2007  4:29 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/09/vmware_esx_302.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>September 28, 2007  4:29 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/09/bourne_ultimatum.html">Bourne Ultimatum</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/09/backing_up_vmware_esx_302_usin.html">Backing up VMware ESX 3.02 using Symantec 11d</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

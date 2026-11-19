@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>How to do a mass import of files into Movable Type (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/02/how_to_create_a_photo_blog.html" title="How to create a Photo Blog." />
+   <link rel="next" href="../../2007/02/using_picasas_export_to_html_f.html" title="Using Picasa's export to html function" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/02/how_to_do_a_mass_import_of_fil.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/37.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="How to do a mass import of files into Movable Type"
+    dc:identifier="../../2007/02/how_to_do_a_mass_import_of_fil.html"
+    dc:subject="Blog"
+    dc:description="For MT 3 users. MT4 users go here. It is easy posting a single entry into your spanking new Photo Gallery blog. Just a few mouse clicks and your picture is for all the world to view. But what if..."
+    dc:creator="Alfred Loo"
+    dc:date="2007-02-22T13:19:31+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/02/how_to_create_a_photo_blog.html">&laquo; How to create a Photo Blog.</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/02/using_picasas_export_to_html_f.html">Using Picasa's export to html function &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">How to do a mass import of files into Movable Type</h2>
+                     <div class="entry" id="entry-110">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>For MT 3 users.  MT4 users go <a href="../../2008/07/mass_import_into_movable_type.html">here.</a></p>
+
+<p>It is easy posting a single entry into your spanking new Photo Gallery blog. Just a few mouse clicks and your picture is for all the world to view.  But what if you have lots and lots of pictures?</p>
+
+<p>This is a <a href="../../2007/02/how_to_create_a_photo_blog.html">continuing article</a> on how to install, configure <a href="http://www.majordojo.com/projects/photogallery.php">Photo Gallery plug-in</a> version 1.7 on Movable Type 3.3</p>
+
+<p>Photo Gallery plug-in automates the installation of Douglas Bowman's <a href="http://stopdesign.com/templates/photos/">custom templates</a>.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>You can do a mass import of the photos into Movable Type.  But first you will need two more additional tools and a template <a href="http://picasa.google.com/">Picasa </a>,  <a href="http://www.pspad.com/">PSpad</a> and <a href="http://www.brettdriscoll.com/picasa-export-template-for-movabletype/">Picasa export template</a></p>
+
+<p>Picasa is used to generate the thumbnails and more importantly the import file required by Movable Type to link the thumbnails and actual pictures together.</p>
+
+<p>According to Movable Type <a href="http://www.sixapart.com/movabletype/docs/3.3/f_import_format/introduction.html">documentation</a>, to do a mass import, each line in the import file should end with a LF, Unix style.  If you are like me, together with about 80% of the PC users out there, that are using Microsoft Windows, you will need to change the DOS standard end of line marker CR/LF.</p>
+
+<p>PSPad's one click formatting from DOS format to Unix, makes it a snap.</p>
+
+<p>To summarise the steps to do a mass import, using Picasa, select the required pictures, Use the "Export as HTML Page" function to create thumbnails and import file.  Use PSPad to re-format the import file for Movable Type to read properly. </p>
+
+<p>FTP the pictures in images and thumbnail folders into where your photo gallery is located.  Put the import file into the Movable Type Import folder.  Run the import function and if it is successful the filenames should be listed out individually on import screen.</p>
+
+<p>I recommend <a href="http://filezilla.sourceforge.net/">FileZilla</a> as a FTP client. Just set the transfer mode to "auto".</p>
+
+<p><strong>Troubleshooting</strong><br />
+1. The category name is always the your local harddisk foldername where your pictures located in.  This is taken from the field AlbumName.  The category name also forms part of the path to your galleries.  You may have to create the categories before FTP.  You can change the loop.htm file to upload to a specific folder, but I have not tested this.</p>
+
+<p>2. The date of the entry comes from the hardcoded date in loop.htm.  Picasa's date format (May 2005) is not compatible with Movable Type's (01/31/2002 03:31:05 PM).  If you want to try something, Picasa's date field tag is <%albumDate%>.</p>
+
+<p>3. From Picasa's default templates, listed below are the tags.<br />
+<%albumName%><br />
+<%albumDate%><br />
+<%albumCaption%><br />
+<%albumItemCount%><br />
+<%itemName%>.<br />
+<%itemCaption%><br />
+<%itemThumbnailImage%><br />
+<%itemThumbnailHeight%><br />
+<%itemThumbnailWidth%><br />
+<%itemLargeImage%><br />
+</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=blog&amp;blog_id=1" rel="tag">blog</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Picasa&amp;blog_id=1" rel="tag">Picasa</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=PSPad&amp;blog_id=1" rel="tag">PSPad</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on February 22, 2007  1:19 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/02/how_to_do_a_mass_import_of_fil.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>February 22, 2007  1:19 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/02/how_to_create_a_photo_blog.html">How to create a Photo Blog.</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/02/using_picasas_export_to_html_f.html">Using Picasa's export to html function</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

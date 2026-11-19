@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Disaster Recovery and backup software (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/06/pcie_and_pcix.html" title="PCI-e and PCI-X" />
+   <link rel="next" href="../../2007/07/windows_2000_and_ml310_g4.html" title="Windows 2000 and ML310 G4" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/06/disaster_recovery_and_backup_s.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/50.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Disaster Recovery and backup software"
+    dc:identifier="../../2007/06/disaster_recovery_and_backup_s.html"
+    dc:subject="IT"
+    dc:description="Prepping two server to demonstrate disaster recovery using Veritas Intelligent Disaster Recovery. Based on track record, not very optimistic but never say die! Read more for update...."
+    dc:creator="Alfred Loo"
+    dc:date="2007-06-20T18:43:59+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/06/pcie_and_pcix.html">&laquo; PCI-e and PCI-X</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/07/windows_2000_and_ml310_g4.html">Windows 2000 and ML310 G4 &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Disaster Recovery and backup software</h2>
+                     <div class="entry" id="entry-602">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Prepping two server to demonstrate disaster recovery using Veritas Intelligent Disaster Recovery.  Based on track record, not very optimistic but never say die!</p>
+
+<p>Read more for update.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>22 Jun 07</p>
+
+<p>The basic steps of preparing for a disaster includes:</p>
+
+<p>a. Full system backup.<br />
+b. Preparing a special boot CD, this is reuseable. Preferably without ASR information.  This will enable you to reuse this CD for any server.<br />
+c. Machine specific floppies.<br />
+d. SCSI card drivers on floppies<br />
+e. Common network card that can fit into your server/s.</p>
+
+<p>After a few rounds of testing, this is what I have found out that most of the time the OS installer will not recognize the SCSI card.  You are better off injecting the driver by pressing F6 to "Install third party SCSI drivers".  </p>
+
+<p>As there is more than an excellent chance of the network card of not working with the limited drivers on the OS CD, a common PCI network card, eg 3Com 3C905 can be very useful.  Install the network card before power up the system.</p>
+
+<p>When disaster strikes:<br />
+1. Install the network card into the server that you want to recover. Plug the network cable to this card.<br />
+2. Boot using the special boot CD.<br />
+3. Press F6 to inject the SCSI card drivers.<br />
+4. For Windows 2003, press F2 to run Advanced System Recovery (ASR).<br />
+5. When prompted select the appropriate SCSI driver for Windows. Careful, some drivers support multiple hardware and the list can be lengthy.  Never mind if there is already one on the CD. Just use the one on the floppy.<br />
+6. You will reach a point where setup asks which harddisk partition to install on. You should see all the partitions the system should have. If any is missing, you need to rectify it now or restore will fail.<br />
+7. When prompted to do a local or remote restore, select remote.<br />
+8. Do not try to insert Custom drivers.  Click on the "Network Connection" button and configure an IP address.  Now you see the value to the network card that you have installed!.<br />
+9.  The server will now try to contact your backup server using the network card and the IP address.<br />
+10. Let the restore run to completion and shutdown the server.  This can take a few hours depending on the amount of data on the disks and network activity.<br />
+11. Remove the network card and switch the network cable back to the desire port.<br />
+12.  Power on and verify.</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Veritas&amp;blog_id=1" rel="tag">Veritas</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on June 20, 2007  6:43 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/06/disaster_recovery_and_backup_s.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>June 20, 2007  6:43 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/06/pcie_and_pcix.html">PCI-e and PCI-X</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/07/windows_2000_and_ml310_g4.html">Windows 2000 and ML310 G4</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

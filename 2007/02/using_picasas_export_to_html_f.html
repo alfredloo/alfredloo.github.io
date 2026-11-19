@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Using Picasa's export to html function (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/02/how_to_do_a_mass_import_of_fil.html" title="How to do a mass import of files into Movable Type" />
+   <link rel="next" href="../../2007/02/new_year_new_challenges.html" title="New Year, New Challenges" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/02/using_picasas_export_to_html_f.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/38.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Using Picasa&apos;s export to html function"
+    dc:identifier="../../2007/02/using_picasas_export_to_html_f.html"
+    dc:subject="Blog"
+    dc:description="Using Picasa&apos;s export to html function, to import files into Movable Type. If you have sorted your pictures in Picasa into folders and these folders have names that matches your Movable Type categories, it is going to be a breeze...."
+    dc:creator="Alfred Loo"
+    dc:date="2007-02-23T13:57:07+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/02/how_to_do_a_mass_import_of_fil.html">&laquo; How to do a mass import of files into Movable Type</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/02/new_year_new_challenges.html">New Year, New Challenges &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Using Picasa's export to html function</h2>
+                     <div class="entry" id="entry-113">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>Using Picasa's export to html function, to import files into Movable Type.  If you have sorted your pictures in Picasa into folders and these folders have names that matches your Movable Type categories, it is going to be a breeze.</p>
+
+<p>Otherwise you have to modify the templates to cater for the difference in names.  It is always eaiser to change a path in a template (x1), compared to changing a path in the output of the template (can be xx times).</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>When Picasa folder name and categories have the same names.<br />
+1. Export in Picasa.  Picasa tags in loop.htm will automatically pick up folder names.<br />
+2. Use PSPad to format import.txt to Unix format.For large number of photos it is eaiser to add your description and dates here.<br />
+3. FTP the pictures to desired category folder.<br />
+4. MT import the pictures. The import file will override any category selection here.<br />
+5. Rebuilt the affected entries, using Categories.</p>
+
+<p>When Picasa folder name and categories have different names.<br />
+1. Create the category in MT<br />
+2. Edit loop.htm for desired category and path. Do not use Picasa tags.<br />
+3. Export in Picasa.<br />
+4. Use PSPad to format import.txt to Unix format. For large number of photos it is eaiser to add your description and dates here.<br />
+5. FTP the pictures to desired category folder.<br />
+6. MT import the pictures.The import file will override any category selection here.<br />
+7. Rebuilt the affected entries, using Categories.<br />
+More <a href="../../2007/02/how_to_do_a_mass_import_of_fil.html">details </a>on the process and tools involved </p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=blog&amp;blog_id=1" rel="tag">blog</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=photo%20gallery&amp;blog_id=1" rel="tag">photo gallery</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Picasa&amp;blog_id=1" rel="tag">Picasa</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=PSPad&amp;blog_id=1" rel="tag">PSPad</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on February 23, 2007  1:57 PM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/02/using_picasas_export_to_html_f.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                                          <div id="comments" class="comments">
+                                                                                 <div class="comments-content">
+                                 <h3 class="comments-header">Comments (1)</h3>
+                           
+                                 <a id="c004189"></a>
+                                 <div class="comment" id="comment-4189">
+                                    <div class="comment-inner">
+                                       <div class="comment-header">
+                                          Alex:
+                                       </div>
+                                       <div class="comment-content">
+                                          <p>There's an easier way to export Picasa album, you just need to enter your username and select album. The rest is done by application. Try it here www.picasa2html.com</p>
+                                       </div>
+                                       <p class="comment-footer">
+                                          Posted by
+                                          Alex  |
+                                          <a href="#comment-4189">September 27, 2007 11:57 PM</a>
+                                       </p>
+                                       <p class="comment-footer-experimental">
+                                          Posted on
+                                          <a href="#comment-4189" title="Permalink to this comment">September 27, 2007 23:57</a>
+                                       </p>
+                                    </div>
+                                 </div>
+                                                         </div>
+                           
+                        
+
+                         
+                        <form method="post" action="https://www.alfredivy.sg/cgi-bin/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="113" />
+                           <script type="text/javascript">obfuscator('AJJyJSjSAa', 'uQJWaFlUn2bHoGCR1zNA04DgqZSBdiYjtILOrwfXv5xc3KT69sMyVh7P8mEepk', 'hidden_input', '', '');</script>
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-open-header">Post a comment</h2>
+                              
+                              <div class="comments-open-content">
+                                 <script type="text/javascript">
+                                 <!--
+                                 writeTypeKeyGreeting(commenter_name, 113);
+                                 //-->
+                                 </script>
+                              
+                                                                  <p class="comments-open-moderated">
+                                    (If you haven't left a comment here before, you may need to be approved by the site owner before your comment will appear. Until then, it won't appear on the entry. Thanks for waiting.)
+                                 </p>
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: (you may use HTML tags for style)</label>
+                                    <textarea id="comment-text" name="text" rows="15" cols="50"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>February 23, 2007  1:57 PM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/02/how_to_do_a_mass_import_of_fil.html">How to do a mass import of files into Movable Type</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/02/new_year_new_challenges.html">New Year, New Challenges</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

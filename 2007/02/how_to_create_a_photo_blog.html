@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>How to create a Photo Blog. (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/02/backing_up_movable_type.html" title="Backing up Movable Type" />
+   <link rel="next" href="../../2007/02/how_to_do_a_mass_import_of_fil.html" title="How to do a mass import of files into Movable Type" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/02/how_to_create_a_photo_blog.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/36.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="How to create a Photo Blog."
+    dc:identifier="../../2007/02/how_to_create_a_photo_blog.html"
+    dc:subject="Blog"
+    dc:description="After some 4 months of late night slogging and going through my entire collection of swear words several times, I got my photo blog or photoblog up. It is based on Douglas Bowman of Stopdesign templates. They are really beautiful...."
+    dc:creator="Alfred Loo"
+    dc:date="2007-02-22T00:09:01+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/02/backing_up_movable_type.html">&laquo; Backing up Movable Type</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/02/how_to_do_a_mass_import_of_fil.html">How to do a mass import of files into Movable Type &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">How to create a Photo Blog.</h2>
+                     <div class="entry" id="entry-109">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>After some 4 months of late night slogging and going through my entire collection of swear words several times, I got my photo blog or photoblog up.</p>
+
+<p>It is based on Douglas Bowman of Stopdesign <a href="http://stopdesign.com/templates/photos/">templates</a>.  They are really beautiful.  </p>
+
+<p>Why you should check this out?<br />
+1. It protects your images<br />
+2. Your pictures are kept in galleries and they are in turned linked up at the index.<br />
+3. You tag description with your photos.<br />
+4. Beautiful</p>
+
+<p>When you can't use this.<br />
+1. Storage space. For every picture you upload, it generates another image and a thumbnail.  So space may become an issue.<br />
+2. It is eaiser to use Picasa et al, export to html function.</p>
+
+<p>Getting it to work is another different story.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>You can install the templates and the associated plugins, about eight of them.  Alternatively you can use the <a href="http://www.majordojo.com/projects/photogallery.php">Photo Gallery plugin</a> made by Bryne Reese.</p>
+
+<p><em>This post covers the installation of the Photo Gallery ver 1.7 on Movable Type ver 3.3</em></p>
+
+<p>The installation portion is quite easy, just follow the instructions and ftp the folders into your web server.  Configuration of the plug in is slightly tricky.  The photo blog you should specify a different path.  Do not make it a sub folder in your current Movable Type blog.  The path name to specify should be the path name in your mt-check.cgi output.  Edit to show the new path. </p>
+
+<p>For example, if mt-check.cgi reports:</p>
+
+<blockquote><em>/home/hsphere/local/home/yourname/yourdomain.com/cgi-bin/mt</em> </blockquote>
+
+<p>change to:</p>
+
+<blockquote><em>/home/hsphere/local/home/yourname/yourdomain.com/photoblog</em></blockquote>
+
+<p>To post new entries in your photo blog follow the plug-in documentation to use the special link to load the file.  You cannot use Movable Type standard "Create New Entry" form.</p>
+
+<p><br />
+<strong>Troubleshooting Photo Gallery plugin</strong><br />
+1. You should see something similar to this <a href="http://dbowman.com/photos/">this</a> even there are no pictures loaded. If it is a blank page, user <a href="http://www.pspad.com/">PSPad </a> to check the templates files are in DOS format.  The templates are located:</p>
+
+<blockquote><em>plugins\PhotoGallery\templates\meta\templates\general-php</em></blockquote>
+
+<p>2. If you are getting "Permission denied" errors:</p>
+
+<blockquote><em>Error making path '/test': mkdir /test: Permission denied at lib/MT/FileMgr/Local.pm line 107</em></blockquote>
+
+<p>This is due to the wrong path entered for your blog.</p>
+
+<p>3. If you are deleting your blog and get "Can't locate object method":</p>
+
+<blockquote><em>"Permission denied.Can't locate object method "id" via package "MT::Callback" at lib/MT/App/CMS.pm line 3937."</em></blockquote>
+
+<p>It is Movable Type's way of telling you do not have enough permission to delete.  Logout and login as an admin to delete.</p>
+
+<p>4. The Photo Gallery plug-in have two types of templates, PHP and HTML.  When switching from HTML to PHP, you need to disable/delete index.html in most of the folders or you will not be able to see the latest updates.<br />
+Next I will cover how to do a mass or bulk import of multiple pictures into Movable Type.  For now I leave you with <a href="https://www.alfredivy.sg/photo_gallery">this</a></p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=blog&amp;blog_id=1" rel="tag">blog</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=photo%20gallery&amp;blog_id=1" rel="tag">photo gallery</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Picasa&amp;blog_id=1" rel="tag">Picasa</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=PSPad&amp;blog_id=1" rel="tag">PSPad</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on February 22, 2007 12:09 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/02/how_to_create_a_photo_blog.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>February 22, 2007 12:09 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/02/backing_up_movable_type.html">Backing up Movable Type</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/02/how_to_do_a_mass_import_of_fil.html">How to do a mass import of files into Movable Type</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

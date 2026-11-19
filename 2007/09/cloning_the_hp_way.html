@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="generator" content="Movable Type 3.31" />
+
+   <link rel="stylesheet" href="../../styles-site.css" type="text/css" />
+   <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../index.xml" />
+
+   <title>Cloning the HP way (Alfred's Ramblings)</title>
+
+   <link rel="start" href="../../" title="Home" />
+   <link rel="prev" href="../../2007/08/have_heard_of_the_command_sc.html" title="Have you heard of the command SC?" />
+   <link rel="next" href="../../2007/09/bourne_ultimatum.html" title="Bourne Ultimatum" />
+
+   <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="../../2007/09/cloning_the_hp_way.html"
+    trackback:ping="https://www.alfredivy.sg/cgi-bin/mt/mt-tb.cgi/55.your ping is to be moderated, so please dont't send repeatedly"
+    dc:title="Cloning the HP way"
+    dc:identifier="../../2007/09/cloning_the_hp_way.html"
+    dc:subject="IT"
+    dc:description="Server Migration Pack, Physical to Proliant"
+    dc:creator="Alfred Loo"
+    dc:date="2007-09-10T09:50:15+08:00" />
+</rdf:RDF>
+-->
+
+
+   
+   <script type="text/javascript" src="../../mt-site.js"></script>
+</head>
+<body class="layout-two-column-right individual-entry-archive" onload="individualArchivesOnLoad(commenter_name)">
+   <div id="container">
+      <div id="container-inner" class="pkg">
+
+         <div id="banner">
+            <div id="banner-inner" class="pkg">
+               <h1 id="banner-header"><a href="../../" accesskey="1">Alfred's Ramblings</a></h1>
+               <h2 id="banner-description">Blog about life, family, work, IT and of course Palm
+The new blog is at  http://www.alfredivy.per.sg/blogger</h2>
+            </div>
+         </div>
+
+         <div id="pagebody">
+            <div id="pagebody-inner" class="pkg">
+               <div id="alpha">
+                  <div id="alpha-inner" class="pkg">
+
+                     <p class="content-nav">
+                        <a href="../../2007/08/have_heard_of_the_command_sc.html">&laquo; Have you heard of the command SC?</a> |
+                        <a href="../../">Main</a>
+                        | <a href="../../2007/09/bourne_ultimatum.html">Bourne Ultimatum &raquo;</a>
+                     </p>
+
+
+                     <h2 id="archive-title">Cloning the HP way</h2>
+                     <div class="entry" id="entry-624">
+                        <div class="entry-content">
+                                                      <div class="entry-body">
+                              <p>HP offers this nifty little software to help you to migrate your installation from old or other platform to Proliant servers.  With a management server, it will reboot the source server and copy the partitions directly to the destination server.  This is done using with the aid <a href="http://www.microsoft.com/downloads/details.aspx?familyid=12cb3c1a-15d6-4585-b385-befd1319f825&displaylang=en">iSCSI Software Initiator</a> from Microsoft.</p>
+
+<p>You can download the trial version from HP.com.  Create a bootable CD from the installation file.  Run the CD on the management and the source server.  Follow the simple instructions on screen.  Move the CD over to the destination server and reboot.  On the management server initiate the cloning.  After 35 minutes for 17 GB of data over a 1Gb switch its done!</p>
+
+<p>The only catch is that your destination Proliant server should be G4 or newer and another thing.</p>
+                           </div>
+                           
+                                                      <div id="more" class="entry-more">
+                              <p>For me after a successful cloning, most of the services on the destination server cannot start.  Event log, SNMP, HP SMH service could start, the rest just gave a "Dependant service not started" or "error 1058". Things got weirder when I could not display the details of the event log and properties of the services.  It is as if I have no permission to manage the server.</p>
+
+<p>Running out of choices, I decided to re-install Windows 2003 SP1 hoping may be it might set things right.  Strangely I could not copy the service pack installation to the disk!</p>
+
+<p>Turns out that the system disk individual folder permissions got clobbered.  Administrator group have no read, write, modify permissions to the disk.  So that is why none of the services are able to start.  Nice though, I can still login.</p>
+
+<p>After spending an hour or so, manually setting the folders permissions to be nearly identical, the services are now able to start.</p>
+
+<p>Soon for the moment of truth, to cutover.</p>
+
+<p>For more details check the software, check it out <a href="http://h18004.www1.hp.com/products/servers/proliantessentials/valuepack/migrate/index.html">here</a></p>
+
+<p>Update 9 Sept 07<br />
+The customer has done some changes. So I have to redo the cloning.  This time round all the services are started normally, none of the previous weird behaviour.  The teaming of the interface was not working properly, so I have to re-create the teaming.</p>
+
+<p>One of the folders were missing in the destination server.  I recreated it back manually.  The registry entry for this folder is buggered, so I have to force it recognize my new folder. Thereafter all the application services were up running normally.</p>
+
+<p>In summary, highly recommended, but advisable to update your configuration information before you start.</p>
+                           </div>
+                                        
+                                                      <div class="entry-tags">
+                               <h4 class="entry-tags-header">Tags:</h4> 
+                               <ul class="entry-tags-list">
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=HP&amp;blog_id=1" rel="tag">HP</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=IT&amp;blog_id=1" rel="tag">IT</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=Windows&amp;blog_id=1" rel="tag">Windows</a></li>
+                                                                          <li class="entry-tag"><a href="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi?tag=work&amp;blog_id=1" rel="tag">work</a></li>
+                                   
+                               </ul>
+                           </div>
+                           
+                        </div>
+                        <p class="entry-footer">
+                           <span class="post-footers">
+                                                                  Posted by Alfred Loo on September 10, 2007  9:50 AM
+                               
+                               
+                           </span> 
+                           <span class="separator">|</span> <a class="permalink" href="../../2007/09/cloning_the_hp_way.html">Permalink</a>
+                        </p>
+                     </div>
+
+                     
+
+                     
+                  </div>
+               </div>
+               <div id="beta">
+                  <div id="beta-inner" class="pkg">
+
+                      <div class="module-search module">
+                         <h2 class="module-header">Search</h2>
+                         <div class="module-content">
+                            <form method="get" action="https://www.alfredivy.sg/cgi-bin/mt/mt-search.cgi">
+                               <input type="hidden" name="IncludeBlogs" value="1" />
+                               <label for="search" accesskey="4">Search this blog:</label><br />
+                               <input id="search" name="search" size="20" />
+                               <input type="submit" value="Search" />
+                            </form>
+                         </div>
+                      </div>
+
+                      <div class="module-welcome module">
+                         <h2 class="module-header">About</h2>
+                         <div class="module-content">
+                             <p class="first">This page contains a single entry from the blog posted on <strong>September 10, 2007  9:50 AM</strong>.</p>
+                             <p>The previous post in this blog was <a href="../../2007/08/have_heard_of_the_command_sc.html">Have you heard of the command SC?</a>.</p>
+
+                             <p>The next post in this blog is <a href="../../2007/09/bourne_ultimatum.html">Bourne Ultimatum</a>.</p>
+
+                             <p>Many more can be found on the <a href="../../">main index page</a> or by looking through <a href="../../archives.html">the archives</a>.</p>
+                             
+                         </div>
+                      </div>
+
+                      <div class="module-syndicate module">
+                         <div class="module-content">
+                            <a href="../../atom.xml">Subscribe to this blog's feed</a><br />
+                            [<a href="http://www.sixapart.com/about/feeds">What is this?</a>]
+                         </div>
+                      </div>
+
+                      
+
+                      <div class="module-powered module">
+                         <div class="module-content">
+                            Powered by<br /><a href="http://www.sixapart.com/movabletype/">Movable Type </a>
+                         </div>
+                      </div>
+
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
